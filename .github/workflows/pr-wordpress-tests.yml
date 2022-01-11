@@ -1,0 +1,75 @@
+name: WordPress Tests
+
+on:
+  pull_request:
+
+jobs:
+  leia-tests:
+    runs-on: ${{ matrix.os }}
+    env:
+      TERM: xterm
+    strategy:
+      matrix:
+        leia-tests:
+          - examples/wordpress
+        lando-versions:
+          - edge
+        os:
+          - ubuntu-20.04
+        node-version:
+          - '14'
+    steps:
+      # Install deps and cache
+      # Eventually it would be great if these steps could live in a separate YAML file
+      # that could be included in line to avoid code duplication
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Use Yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Yarn dependencies
+        run: yarn install --prefer-offline --frozen-lockfile
+
+      # This block should eventually become use lando/actions-hyperdrive@v2
+      - name: Verify Docker dependencies
+        run: |
+          docker --version | grep "20.10."
+          docker-compose --version | grep "1.29."
+      - name: Grab latest edge Lando CLI
+        run: |
+          sudo curl -fsSL -o /usr/local/bin/lando "https://files.lando.dev/cli/lando-linux-x64-${{ matrix.lando-versions }}"
+          sudo chmod +x /usr/local/bin/lando
+      - name: Move in lando config appropriate for testing
+        run: |
+          mkdir -p ~/.lando/cache
+          cp -f actions-lando-config.yml ~/.lando/config.yml
+          echo false > ~/.lando/cache/report_errors
+          lando --clear
+      - name: Verify Lando works and we are dogfooding this plugin for tests
+        run: |
+          lando version
+          lando config --path plugins | grep wordpress | grep /home/runner/work/wordpress/wordpress || echo "::error:: Not dogfooding this plugin correctly! "
+
+      # This block should eventually become use lando/actions-leia@v2
+      # @NOTE? Do we want a way for our leia-action to configure apparmor since
+      # this might break a whole bunch of tests? or is this literally just a thing
+      # for the Lagoon mysql/mariadb container?
+      - name: Configure apparmor
+        run: |
+          set -x
+          sudo apt-get remove mysql-server --purge
+          sudo apt-get install apparmor-profiles
+          sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
+      - name: Run leia tests
+        shell: bash
+        run: yarn leia "./${{ matrix.leia-tests }}/README.md" -c 'Destroy tests' --stdin --shell bash

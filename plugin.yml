@@ -1,0 +1,29 @@
+# We don't need this because its in the package.json
+# but we set it anyway just to make sure we know what is what
+name: "@lando/wordpress"
+
+# Let lando autoscan this plugin for "legacy" plugin stuff needed for v3
+legacy: true
+
+# This is just metadata that something else can use to understand how the docs are organized
+docs:
+  # This is the tag we should use when connecting platform.sh content together eg showing guides on the main
+  # platform.sh recipe docs
+  tag: wordpress
+
+  # This gets added to the lando/lando docs guides.json
+  guides:
+    title: WordPress
+    collapsable: true
+    # Note that these are "source/destination" pairs the source is relative to the root of this
+    # repo and the desintation is relative to docs/guides in the main lando repo
+    # When this gets added to guides.json we map children so its just the destination
+    children:
+      "guides/adding-tooling": wordpress/adding-tooling
+
+  # This gets added to the lando/lando docs config.js
+  # Below takes docs/usage.md from this repo and puts it into config/wordpress.md in lando/lando
+  # and then adds wordpress to the list of recipes in config.js
+  config:
+    recipes:
+      "wordpress": ./docs/usage.md

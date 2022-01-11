@@ -1,0 +1,12 @@
+# Disable the "core" wordpress plugins
+disablePlugins:
+  - lando-wordpress
+
+# Make sure we are dogfooding this plugin for testing purposes
+plugins:
+  "@lando/wordpress": /home/runner/work/wordpress/wordpress
+
+# Disable metrics reporting
+stats:
+  - report: false
+    url: https://metrics.lando.dev

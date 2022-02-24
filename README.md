@@ -1,65 +1,44 @@
-# Lando WordPress Plugin
+# WordPress Lando Plugin
 
-The Lando WordPress plugin recipe.
+This is the _official_ [Lando](https://lando.dev) plugin for [WordPress](https://wordpress.org/). When installed it...
 
-## Installation
+* Allows users to run `wordpress` cms
+* Allows users to configure `php` version from `5.3` all the way to `8.1`
+* Allows users to configure `webroot`
+* Allows users to configure web server to (`apache` or `nginx`)
+* Allows users to configure database backend to (`mariadb`, `mysql`, or `postgres`)
+* Allows users to configure `composer`
+* Allows users to run `wp cli` commands
+* Allows users to configure `xdebug`
 
-```bash
-# With npm
-npm install @lando/wordpress
+Of course, once a user is running their WordPress project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
 
-# With yarn
-yarn add @lando/wordpress
+## Basic Usage
+
+Add a `wordpress` recipe to your Landofile
+
+```yaml
+name: wordpress-app
+recipe: wordpress
 ```
+
+For more info you should check out the [docs](https://docs.lando.dev/wordpress):
+
+* [Getting Started](https://docs.lando.dev/wordpress/)
+* [Configuration](https://docs.lando.dev/wordpress/config.html)
+* [Tooling](https://docs.lando.dev/wordpress/tooling.html)
+* [Examples](https://github.com/lando/wordpress/tree/main/examples)
+* [Development](https://docs.lando.dev/wordpress/development.html)
 
 ## Issues, Questions and Support
 
-If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando). Note that this is the Slack community for [Lando](https://lando.dev) but we are more than happy to help with this module as well!
+If you have a question or would like some community support we recommend you [join us on Slack](https://launchpass.com/devwithlando).
 
 If you'd like to report a bug or submit a feature request then please [use the issue queue](https://github.com/lando/wordpress/issues/new/choose) in this repo.
 
 ## Changelog
 
 We try to log all changes big and small in both [THE CHANGELOG](https://github.com/lando/wordpress/blob/main/CHANGELOG.md) and the [release notes](https://github.com/lando/wordpress/releases).
-
-
-## Development
-
-* Requires [Node 14+](https://nodejs.org/dist/latest-v14.x/)
-* Prefers [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
-
-```bash
-git clone https://github.com/lando/wordpress.git && cd wordpress
-yarn install
-```
-
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
-
-```bash
-git clone https://github.com/lando/wordpress.git && cd wordpress
-# Install deps and get node
-lando start
-
-# Run commands
-lando node
-lando yarn
-```
-
-## Testing
-
-```bash
-# Lint the code
-yarn lint
-
-# Run unit tests
-yarn test
-```
-
-## Releasing
-
-```bash
-yarn release
-```
 
 ## Contributors
 
@@ -69,6 +48,7 @@ yarn release
 
 Made with [contributors-img](https://contrib.rocks).
 
-## Other Resources
+## Other Selected Resources
 
-* [Important advice](https://www.youtube.com/watch?v=WA4iX5D9Z64)
+* [LICENSE](https://github.com/lando/wordpress/blob/main/LICENSE.md)
+* [The best professional advice ever](https://www.youtube.com/watch?v=tkBVDh7my9Q)

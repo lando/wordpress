@@ -26,15 +26,15 @@ module.exports = {
     sidebar: [
       {
         text: 'Overview',
-        link: '/index.md',
+        link: '/index.html',
       },
-      '/getting-started.md',
-      '/config.md',
-      '/tooling.md',
-      '/support.md',
+      '/getting-started.html',
+      '/config.html',
+      '/tooling.html',
+      '/support.html',
       {text: 'Examples', link: 'https://github.com/lando/wordpress/tree/main/examples'},
       {text: 'Release Notes', link: 'https://github.com/lando/wordpress/releases'},
-      '/development.md',
+      '/development.html',
     ],
   },
 };

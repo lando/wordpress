@@ -29,7 +29,7 @@ Note that if the above config options are not enough, all Lando recipes can be f
 
 ## Choosing a php version
 
-You can set `php` to any version that is available in our [php service](./php.html). However, you should consult the [WordPress requirements](https://wordpress.org/about/requirements/) to make sure that version is actually supported by WordPress itself.
+You can set `php` to any version that is available in our [php service](https://docs.lando.dev/php). However, you should consult the [WordPress requirements](https://wordpress.org/about/requirements/) to make sure that version is actually supported by WordPress itself.
 
 The [recipe config](https://docs.lando.dev/config/recipes.html#config) to set the WordPress recipe to use `php` version `7.1` is shown below:
 
@@ -40,7 +40,7 @@ config:
 ```
 ## Choosing a composer version
 
-You can set `composer_version` to any version that is available in our [php service](./php.html#installing-composer).
+You can set `composer_version` to any version that is available in our [php service](https://docs.lando.dev/php/config.html#installing-composer).
 
 ```yaml
 recipe: wordpress
@@ -50,7 +50,7 @@ config:
 
 ## Choosing a web server
 
-By default, this recipe will be served by the default version of our [apache](./apache.html) service but you can also switch this to use [`nginx`](./nginx.html). We *highly recommend* you check out both the [apache](./apache.html) and [nginx](./nginx.html) services before you change the default `via`.
+By default, this recipe will be served by the default version of our [apache](https://docs.lando.dev/apache) service but you can also switch this to use [`nginx`](https://docs.lando.dev/nginx). We *highly recommend* you check out both the [apache](https://docs.lando.dev/apache) and [nginx](https://docs.lando.dev/nginx) services before you change the default `via`.
 
 #### With Apache (default)
 
@@ -70,9 +70,9 @@ config:
 
 ## Choosing a database backend
 
-By default, this recipe will use the default version of our [mysql](./mysql.html) service as the database backend but you can also switch this to use [`mariadb`](./mariadb.html) or ['postgres'](./postgres.html) instead. Note that you can also specify a version *as long as it is a version available for use with lando* for either `mysql`, `mariadb` or `postgres`.
+By default, this recipe will use the default version of our [mysql](https://docs.lando.dev/mysql) service as the database backend but you can also switch this to use [`mariadb`](https://docs.lando.dev/mariadb) or ['postgres'](https://docs.lando.dev/postgres) instead. Note that you can also specify a version *as long as it is a version available for use with lando* for either `mysql`, `mariadb` or `postgres`.
 
-If you are unsure about how to configure the `database`, we *highly recommend* you check out the [mysql](./mysql.html), [mariadb](./mariadb.html)and ['postgres'](./postgres.html) services before you change the default.
+If you are unsure about how to configure the `database`, we *highly recommend* you check out the [mysql](https://docs.lando.dev/mysql), [mariadb](https://docs.lando.dev/mariadb)and ['postgres'](https://docs.lando.dev/postgres) services before you change the default.
 
 Also note that like the configuration of the `php` version you should consult the [WordPress requirements](https://downloads.wordpress.org/us/technical-requirements-us) to make sure the `database` and `version` you select is actually supported by WordPress itself.
 
@@ -193,7 +193,7 @@ You may need to override our [default WordPress config](https://github.com/lando
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 
-Note that the default files may change based on how you set both `ssl` and `via`. Also note that the `vhosts` and `server` config will be either for `apache` or `nginx` depending on how you set `via`. We *highly recommend* you check out both the [apache](./apache.html#configuration) and [nginx](./nginx.html#configuration) if you plan to use a custom `vhosts` or `server` config.
+Note that the default files may change based on how you set both `ssl` and `via`. Also note that the `vhosts` and `server` config will be either for `apache` or `nginx` depending on how you set `via`. We *highly recommend* you check out both the [apache](https://docs.lando.dev/apache/config.html) and [nginx](https://docs.lando.dev/nginx/config.html) if you plan to use a custom `vhosts` or `server` config.
 **A hypothetical project**
 
 Note that you can put your configuration files anywhere inside your application directory. We use a `config` directory but you can call it whatever you want such as `.lando` in the example below:

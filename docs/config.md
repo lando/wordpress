@@ -194,6 +194,7 @@ You may need to override our [default WordPress config](https://github.com/lando
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 
 Note that the default files may change based on how you set both `ssl` and `via`. Also note that the `vhosts` and `server` config will be either for `apache` or `nginx` depending on how you set `via`. We *highly recommend* you check out both the [apache](https://docs.lando.dev/apache/config.html) and [nginx](https://docs.lando.dev/nginx/config.html) if you plan to use a custom `vhosts` or `server` config.
+
 **A hypothetical project**
 
 Note that you can put your configuration files anywhere inside your application directory. We use a `config` directory but you can call it whatever you want such as `.lando` in the example below:

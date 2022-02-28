@@ -74,7 +74,7 @@ By default, this recipe will use the default version of our [mysql](https://docs
 
 If you are unsure about how to configure the `database`, we *highly recommend* you check out the [mysql](https://docs.lando.dev/mysql), [mariadb](https://docs.lando.dev/mariadb)and ['postgres'](https://docs.lando.dev/postgres) services before you change the default.
 
-Also note that like the configuration of the `php` version you should consult the [WordPress requirements](https://downloads.wordpress.org/us/technical-requirements-us) to make sure the `database` and `version` you select is actually supported by WordPress itself.
+Also note that like the configuration of the `php` version you should consult the [WordPress requirements](https://wordpress.org/about/requirements/) to make sure the `database` and `version` you select is actually supported by WordPress itself.
 
 #### Using MySQL (default)
 
@@ -189,7 +189,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default WordPress config](https://github.com/lando/cli/tree/main/plugins/lando-recipes/recipes/wordpress) with your own.
+You may need to override our [default WordPress config](https://github.com/lando/wordpress/tree/main/recipes/wordpress) with your own.
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 

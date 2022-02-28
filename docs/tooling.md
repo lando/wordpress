@@ -38,7 +38,7 @@ You can also run `lando` from inside your app directory for a complete list of c
 
 ## Using xdebug
 
-This is just a passthrough option to the [xdebug setting](https://docs.lando.dev/php.html#toggling-xdebug) that exists on all our [php services](https://docs.lando.dev/php.html). The `tl;dr` is `xdebug: true` enables and configures the php xdebug extension and `xdebug: false` disables it.
+This is just a passthrough option to the [xdebug setting](https://docs.lando.dev/php/config.html#using-xdebug) that exists on all our [php services](https://docs.lando.dev/php). The `tl;dr` is `xdebug: true` enables and configures the php xdebug extension and `xdebug: false` disables it.
 
 ```yaml
 recipe: wordpress
@@ -46,7 +46,7 @@ config:
   xdebug: true|false
 ```
 
-However, for more information we recommend you consult the [php service documentation](https://docs.lando.dev/php.html).
+However, for more information we recommend you consult the [php service documentation](https://docs.lando.dev/php).
 
 ## Importing Your Database
 

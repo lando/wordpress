@@ -1,6 +1,7 @@
 ---
 title: WordPress Lando Plugin
 description: Use WordPress on Lando for local development; powered by Docker and Docker Compose, config php version, swap db backends or web server, use composer, wp cli, xdebug and custom config files, oh and also import and export databases.
+next: ./getting-started.html
 ---
 
 # WordPress

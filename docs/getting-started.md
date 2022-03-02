@@ -17,6 +17,9 @@ Before you get started with this recipe we assume that you have:
 Try out the relevant commands below to spin up a new Landoified vanilla WordPress site.
 
 ```bash
+# Create folder and enter it
+mkdir wordpress && cd wordpress
+
 # Initialize a wordpress recipe using the latest WordPress version
 lando init \
   --source remote \
@@ -28,9 +31,28 @@ lando init \
 # Start it up
 lando start
 
-# List information about this app.
+# List information about this app
 lando info
+
+# Create a WordPress config file
+lando wp config create \
+  --dbname=wordpress \
+  --dbuser=wordpress \
+  --dbpass=wordpress \
+  --dbhost=database \
+  --path=wordpress
+
+# Install WordPress
+lando wp core install \
+ --url=https://my-first-wordpress-app.lndo.site/ \
+ --title="My First Wordpress App" \
+ --admin_user=admin \
+ --admin_password=password \
+ --admin_email=admin@my-first-wordpress-app.lndo.site \
+ --path=wordpress
 ```
+
+Log in with `admin` and `password` at https://my-first-wordpress-app.lndo.site/wp-login.php
 
 ## Custom Installation
 

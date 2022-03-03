@@ -24,7 +24,7 @@ recipe: wordpress
 
 For more info you should check out the [docs](https://docs.lando.dev/wordpress):
 
-* [Getting Started](https://docs.lando.dev/wordpress/)
+* [Getting Started](https://docs.lando.dev/wordpress/getting-started.html)
 * [Configuration](https://docs.lando.dev/wordpress/config.html)
 * [Tooling](https://docs.lando.dev/wordpress/tooling.html)
 * [Examples](https://github.com/lando/wordpress/tree/main/examples)

@@ -17,7 +17,7 @@ At the very least you will need to have the following installed:
 While not a hard requirement it's also probably a good idea to install both `node` 14 and `yarn`
 
 * [Node 14](https://nodejs.org/dist/latest-v14.x/)
-* [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+* [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
 
 ## Installation
 

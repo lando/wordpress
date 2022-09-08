@@ -1,4 +1,6 @@
-## IN DEVELOPMENT
+## v0.6.0 - [September 7, 2022](https://github.com/lando/wordpress/releases/tag/v0.6.0)
+
+* HYPERDRIVED
 
 ## v0.5.0 - [January 11, 2022](https://github.com/lando/wordpress/releases/tag/v0.5.0)
 

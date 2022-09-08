@@ -157,6 +157,24 @@ Now open a pull request and the new tests should run!
 
 For a deeper dive on Leia you can go [here](https://github.com/lando/leia).
 
+## Releasing
+
+To deploy and publish a new version of the package to the `npm` registry you need only [create a release on GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). That said, in order to create a release and succesfully publish it to `npm` you will want to make sure:
+
+* You have tagged the commit you want to deploy in `git` and pushed it up to GitHub
+* You have bumped the version in your `package.json` so that it doesn't collide with a version already published to `npm`
+
+In order to help with the above we recommend you run the convience command `yarn release` which will take care of both.
+
+Also note that if you create a "pre-release" it will tag the `npm` package with `edge` instead of the default `latest` tag. Also note that while you can toggle the pre-release checkbox after the initial release creation this will not trigger a new release and/or promote the release from `edge` to `latest`. If you want to deploy to `latest` then create a new release without pre-released checked.
+
+```bash
+# Will pull the most recent GitHub release
+yarn add @lando/wordpress
+# Will pull the most recent GitHub pre-release
+yarn add @lando/wordpress@edge
+```
+
 ## Contribution
 
 If you want to contribute code then just follow [this flow](https://guides.github.com/introduction/flow/).

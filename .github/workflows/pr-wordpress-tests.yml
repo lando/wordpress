@@ -12,6 +12,7 @@ jobs:
       matrix:
         leia-tests:
           - examples/wordpress
+          - examples/wordpress-mysql8
         lando-versions:
           - edge
         os:

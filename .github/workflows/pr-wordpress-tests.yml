@@ -9,6 +9,7 @@ jobs:
     env:
       TERM: xterm
     strategy:
+      fail-fast: false
       matrix:
         leia-test:
           - examples/wordpress

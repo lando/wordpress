@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://wordpress.org/latest.tar.gz --re
 
 # Should start up successfully
 cd wordpress
-echo -e "\nplugins:\n  \"@lando/wordpress/\": ./../../" >> .lando.yml
+cp ../../.lando.local.yml .
 lando start
 ```
 

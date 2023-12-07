@@ -39,4 +39,4 @@ coverage/
 _site
 docs/.vuepress/.cache
 docs/.vuepress/.temp
-docs/.vuepress/dist
+docs/.vuepress/distyarn.lock

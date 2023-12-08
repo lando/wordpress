@@ -1,3 +1,6 @@
+## v1.0.0 - [December 7, 2023](https://github.com/lando/wordpress/releases/tag/v1.0.0)
+    * Dialed fully for `lando update`
+
 ## v0.9.0 - [July 3, 2023](https://github.com/lando/wordpress/releases/tag/v0.9.0)
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.

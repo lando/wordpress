@@ -67,12 +67,12 @@ However if you would like to manually install the plugin, update it to the bleed
 mkdir -p ~/.lando/plugins
 
 # Install plugin
-# NOTE: Modify the "yarn add @lando/wordpress" line to install a particular version eg
-# yarn add @lando/platform@0.5.2
-docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:14-alpine sh -c \
-  "yarn init -y \
-  && yarn add @lando/wordpress --production --flat --no-default-rc --no-lockfile --link-duplicates \
-  && yarn install --production --cwd /tmp/node_modules/@lando/wordpress \
+# NOTE: Modify the "npm install @lando/wordpress" line to install a particular version eg
+# npm install @lando/platform@0.5.2
+docker run --rm -it -v ${HOME}/.lando/plugins:/plugins -w /tmp node:18-alpine sh -c \
+  "npm init -y \
+  && npm install @lando/wordpress --production --flat --no-default-rc --no-lockfile --link-duplicates \
+  && npm install --production --cwd /tmp/node_modules/@lando/wordpress \
   && mkdir -p /plugins/@lando \
   && mv --force /tmp/node_modules/@lando/wordpress /plugins/@lando/wordpress"
 

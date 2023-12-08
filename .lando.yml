@@ -1,14 +1,14 @@
 name: lando-wordpress-plugin
 services:
   node:
-    type: node:14
+    type: node:18
     build:
-      - yarn install
+      - npm install
     scanner: false
     ssl: false
     sslExpose: false
 tooling:
   node:
     service: node
-  yarn:
+  npm:
     service: node

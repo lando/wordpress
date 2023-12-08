@@ -14,10 +14,8 @@ At the very least you will need to have the following installed:
 * [Lando 3.5.0+](https://docs.lando.dev/basics/installation.html), preferably installed [from source](https://docs.lando.dev/basics/installation.html#from-source).
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-While not a hard requirement it's also probably a good idea to install both `node` 14 and `yarn`
-
-* [Node 14](https://nodejs.org/dist/latest-v14.x/)
-* [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
+While not a hard requirement it's also probably a good idea to install `node` 18
+* [Node 18](https://nodejs.org/dist/latest-v18.x/)
 
 ## Installation
 
@@ -28,8 +26,8 @@ git clone https://github.com/lando/wordpress.git && cd wordpress
 # Install dependencies with lando
 lando start
 
-# Or install them with yarn
-yarn
+# Or install them with npm
+npm install
 ```
 
 ## Working
@@ -60,10 +58,10 @@ If you want to help with contributing documentation here are some useful command
 
 ```bash
 # launch local docs site
-yarn docs:dev
+npm run docs:dev
 
 # build docs locally
-yarn docs:build
+npm run docs:build
 ```
 
 If you are more interested in the internals of the docs they use [VuePress2](https://v2.vuepress.vuejs.org/) and our [Special theme](https://vuepress-theme-default-plus.lando.dev).
@@ -88,7 +86,7 @@ And then you can run the tests with the below.
 
 ```bash
 # Run unit tests
-yarn test:unit
+npm run test:unit
 ```
 
 ### Leia Tests
@@ -115,7 +113,7 @@ Destroy tests
 lando destroy -y
 ```
 
-Note that the headers here are important and are defined in our `yarn generate:tests` script. The _Start up tests_ header specifies things that should run before the main series of tests. _Verification commands_ is the main body of tests and is required. _Destroy tests_ specifies any needed clean up commands to run.
+Note that the headers here are important and are defined in our `npm run generate:tests` script. The _Start up tests_ header specifies things that should run before the main series of tests. _Verification commands_ is the main body of tests and is required. _Destroy tests_ specifies any needed clean up commands to run.
 
 If you check out the various READMEs in our [examples](https://github.com/lando/wordpress/tree/main/examples) you will notice that they are all Leia tests.
 
@@ -123,13 +121,13 @@ Before running all or some of the tests you will need to generate them.
 
 ```bash
 # Generate tests
-yarn generate:tests
+npm run generate:tests
 
 # Run ALL the tests, this will likely take a long time
-yarn test:leia
+npm run test:leia
 
 # Run the tests for a single example
-yarn leia examples/mariadb-10.2/README.md -c 'Destroy tests'
+npm run leia examples/mariadb-10.2/README.md -c 'Destroy tests'
 ```
 
 If you've created new testable examples then you will also need to let GitHub Actions know so they can run on pull requests.
@@ -145,7 +143,7 @@ jobs:
       matrix:
         leia-tests:
             # This should be the filename, without .leia.js extension in the test directory
-            # NOTE that you will need to run yarn generate:tests to see these
+            # NOTE that you will need to run npm run generate:tests to see these
           - test: platform-sh-maria-db-10-1-example
             # This should be the directory that the test was generated from
             source: examples/mariadb-10.2
@@ -165,9 +163,9 @@ Also note that if you create a "pre-release" it will tag the `npm` package with 
 
 ```bash
 # Will pull the most recent GitHub release
-yarn add @lando/wordpress
+npm install @lando/wordpress
 # Will pull the most recent GitHub pre-release
-yarn add @lando/wordpress@edge
+npm install @lando/wordpress@edge
 ```
 
 ## Contribution

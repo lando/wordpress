@@ -7,7 +7,7 @@ const _ = require('lodash');
  * Helper to get a phar download and setupcommand
  * @TODO: clean this mess up
  */
-exports.getPhar = (url, src, dest, check = 'true') => {
+module.exports = (url, src, dest, check = 'true') => {
   // Arrayify the check if needed
   if (_.isString(check)) check = [check];
   // Phar install command

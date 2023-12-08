@@ -108,20 +108,53 @@ const toolingDefaults = {
     service: 'appserver',
     cmd: 'php',
   },
-  'mysql': {
-    service: ':host',
-    description: 'Drops into a MySQL shell on a database service',
-    cmd: 'mysql -uroot',
-    options: {
-      host: {
-        description: 'The database service to use',
-        default: 'database',
-        alias: ['h'],
-      },
+};
+
+// Default DB cli commands
+const mysqlCli = {
+  service: ':host',
+  description: 'Drops into a MySQL shell on a database service',
+  cmd: 'mysql -uroot',
+  options: {
+    host: {
+      description: 'The database service to use',
+      default: 'database',
+      alias: ['h'],
+    },
+  },
+};
+const postgresCli = {
+  service: ':host',
+  description: 'Drops into a psql shell on a database service',
+  cmd: 'psql -Upostgres',
+  user: 'root',
+  options: {
+    host: {
+      description: 'The database service to use',
+      default: 'database',
+      alias: ['h'],
     },
   },
 };
 
+/*
+ * Helper to get the phar build command
+ */
+const getDbTooling = database => {
+  // Make sure we strip out any version number
+  database = database.split(':')[0];
+  // Choose wisely
+  if (_.includes(['mysql', 'mariadb'], database)) {
+    return {mysql: mysqlCli};
+  } else if (database === 'postgres') {
+    return {psql: postgresCli};
+  } else if (database === 'mongo') {
+    return {mongo: {
+      service: 'database',
+      description: 'Drop into the mongo shell',
+    }};
+  }
+};
 
 /*
  * Helper to get config defaults
@@ -149,6 +182,11 @@ const getConfigDefaults = options => {
     }
   });
 };
+
+/*
+ * Helper to get tooling
+ */
+const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database));
 
 /*
  * Build WordPress
@@ -184,7 +222,7 @@ module.exports = {
       // Rebase on top of any default config we might already have
       options.defaultFiles = _.merge({}, getConfigDefaults(_.cloneDeep(options)), options.defaultFiles);
       options.services = _.merge({}, getServices(options), options.services);
-      options.tooling = _.merge({}, toolingDefaults, options.tooling);
+      options.tooling = _.merge({}, getTooling(options), options.tooling);
       // Switch the proxy if needed
       if (!_.has(options, 'proxyService')) {
         if (_.startsWith(options.via, 'nginx')) options.proxyService = 'appserver_nginx';

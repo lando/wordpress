@@ -119,7 +119,7 @@ const toolingDefaults = {
         alias: ['h'],
       },
     },
-  }
+  },
 };
 
 
@@ -191,7 +191,7 @@ module.exports = {
         else if (_.startsWith(options.via, 'apache')) options.proxyService = 'appserver';
       }
       options.proxy = _.set(options.proxy, options.proxyService, [`${options.app}.${options._app._config.domain}`]);
-      
+
       // Downstream
       // Send downstream
       super(id, options);

@@ -1,7 +1,7 @@
 name: lando-wordpress-plugin
 services:
   node:
-    type: node:14
+    type: node:18
     build:
       - npm install
     scanner: false

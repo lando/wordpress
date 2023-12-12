@@ -1,0 +1,6 @@
+name: wordpress-exports
+recipe: wordpress
+
+# do not remove this
+plugins:
+  "@lando/wordpress": ../..

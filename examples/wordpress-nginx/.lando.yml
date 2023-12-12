@@ -1,0 +1,15 @@
+name: wordpress-nginx
+recipe: wordpress
+config:
+  via: nginx
+  webroot: web
+  php: 7.4
+
+
+tooling:
+  nginx:
+    service: appserver_nginx
+
+# do not remove this
+plugins:
+  "@lando/wordpress": ../..

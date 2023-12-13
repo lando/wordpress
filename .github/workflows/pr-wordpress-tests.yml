@@ -12,8 +12,13 @@ jobs:
       fail-fast: false
       matrix:
         leia-test:
-          - examples/wordpress
+          - examples/wordpress-custom
+          - examples/wordpress-defaults
+          - examples/wordpress-export
+          - examples/wordpress-import
+          - examples/wordpress-init
           - examples/wordpress-mysql8
+          - examples/wordpress-nginx
         lando-version:
           - 3-dev-slim
         os:

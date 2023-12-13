@@ -1,0 +1,6 @@
+name: wordpress-defaults
+recipe: wordpress
+
+# do not remove this
+plugins:
+  "@lando/wordpress": ../..

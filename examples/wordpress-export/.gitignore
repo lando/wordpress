@@ -1,0 +1,4 @@
+*.sql
+*.gz
+*.zip
+!mysql-test.sql

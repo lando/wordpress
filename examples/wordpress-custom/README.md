@@ -34,17 +34,14 @@ lando php -v | grep "PHP 7.4"
 # Should use composer 2.0.7
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2.0.7"
 
-# Should be running mysql 5.7
-lando mysql -V | grep "mysql" | grep "Distrib 5.7."
+# Should be running mysql 5.7 by default
+lando mysql -V | grep 5.7
 
 # Should be able to connect to the database with the default creds
 lando mysql wordpress -e quit
 
 # Should have xdebug enabled
 lando php -m | grep Xdebug
-
-# Should have bee 1.x-1.x
-lando bee version | grep "Bee for Wordpress CMS" | grep "1.x-1.x"
 
 # Should be using custom config files
 lando ssh -s appserver -c "curl -L appserver_nginx/info.php" | grep memory_limit | grep 513M

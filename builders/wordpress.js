@@ -198,7 +198,7 @@ module.exports = {
     build: [],
     confSrc: __dirname,
     config: {},
-    database: 'mysql',
+    database: 'mysql:5.7',
     defaultFiles: {
       php: 'php.ini',
     },

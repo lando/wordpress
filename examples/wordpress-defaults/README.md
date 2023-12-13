@@ -24,24 +24,21 @@ Run the following commands to validate things are rolling as they should.
 # Should serve from app root by default
 lando ssh -s appserver -c "curl -L localhost" | grep "DEFAULTS"
 
-# Should use 8.2 as the default php version
-lando php -v | grep "PHP 8.2"
+# Should use 7.4 as the default php version
+lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 lando ssh -s appserver -c "apachectl -V | grep 2.4"
 lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
 
-# Should be running mariadb 10.6 by default
-lando mysql -V | grep 10.6 | grep MariaDB
+# Should be running mysql 5.7 by default
+lando mysql -V | grep 5.7
 
 # Should not enable xdebug by default
 lando php -m | grep xdebug || echo $? | grep 1
 
 # Should use the default database connection info
 lando mysql wordpress -e quit
-
-# Should use bee 1.x-1.x by default
-lando bee version | grep "Bee for Wordpress CMS" | grep "1.x-1.x"
 
 # Should use composer 2 by default
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."

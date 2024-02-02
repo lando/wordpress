@@ -5,7 +5,7 @@ description: Learn how to develop and contribute to the Lando Wordpress service
 
 # Development
 
-This guide contains information to help onboard developers to work on the [wordpress](https://wordpress.microsoft.com/en-us/) integration, hereafter referred to as *the plugin*.
+This guide contains information to help onboard developers to work on the [wordpress](https://wordpress.org/) integration, hereafter referred to as *the plugin*.
 
 ## Requirements
 

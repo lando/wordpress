@@ -52,5 +52,5 @@ lando wp core install \
   --path=wordpress
 ```
 
-Log in with `admin` and `password` at https://my-first-wordpress-app.lndo.site/wp-login.php
+Log in with `admin` and `password` at `https://my-first-wordpress-app.lndo.site/wp-login.php`
 

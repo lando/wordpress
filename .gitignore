@@ -33,13 +33,14 @@ dist
 .nyc_output
 coverage/
 
-# Vuepress
+# docs
 .temp
 .cache
 _site
-docs/.vuepress/.cache
-docs/.vuepress/.temp
-docs/.vuepress/dist
+dist
+cache
+temp
+config.*.timestamp-*-*.*
 
 # YARN
 yarn.lock

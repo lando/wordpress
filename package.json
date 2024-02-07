@@ -48,19 +48,19 @@
     "@lando/nginx": "^0.11.0",
     "@lando/php": "^1.0.0",
     "@lando/postgres": "^0.10.0",
-    "@lando/vitepress-theme-default-plus": "^1.0.0-beta.23",
-    "lodash": "^4.17.21",
-    "vitepress": "^1.0.0-rc.41"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.0",
     "@lando/leia": "^0.6.5",
+    "@lando/vitepress-theme-default-plus": "^1.0.0-beta.26",
     "chai": "^4.3.4",
     "command-line-test": "^1.0.10",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-vue": "^8.0.3",
     "mocha": "^9.1.2",
-    "nyc": "^15.1.0"
+    "nyc": "^15.1.0",
+    "vitepress": "^1.0.0-rc.42"
   }
 }

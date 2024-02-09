@@ -1,32 +1,27 @@
 ---
 title: Development
-description: Learn how to develop and contribute to the Lando WordPress service
+description: Learn how to develop and contribute to the Lando Wordpress service
 ---
 
 # Development
 
-This guide contains information to help onboard developers to work on the [WordPress](https://wordpress.org/) integration, hereafter referred to as "the plugin".
+This guide contains information to help onboard developers to work on the [wordpress](https://wordpress.org/) integration, hereafter referred to as *the plugin*.
 
 ## Requirements
 
 At the very least you will need to have the following installed:
 
-* [Lando 3.5.0+](https://docs.lando.dev/basics/installation.html), preferably installed [from source](https://docs.lando.dev/basics/installation.html#from-source).
+* [Lando 3.21.0+](https://docs.lando.dev/getting-started/installation.html) preferably installed [from source](https://docs.lando.dev/install/source.html).
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
-While not a hard requirement it's also probably a good idea to install `node` 18
 * [Node 18](https://nodejs.org/dist/latest-v18.x/)
 
 ## Installation
 
-```bash
+```sh
 # Clone this repo
 git clone https://github.com/lando/wordpress.git && cd wordpress
 
-# Install dependencies with lando
-lando start
-
-# Or install them with npm
+# Install deps
 npm install
 ```
 
@@ -38,7 +33,7 @@ Note that each one of these examples contains the following section in its Lando
 
 ```yaml
 plugins:
-  "@lando/wordpress": ./../../
+  "@lando/wordpress": ../..
 ```
 
 This tells Lando that _this_ app should use the source version of the `@lando/wordpress` plugin you cloned down in the installation. This is useful because it allows you to isolate development within this repo without interferring with any other apps using the stable and global version of the plugin.
@@ -62,21 +57,24 @@ npm run docs:dev
 
 # build docs locally
 npm run docs:build
+
+# preview built docs locally
+npm run docs:build
 ```
 
-If you are more interested in the internals of the docs they use [VuePress2](https://v2.vuepress.vuejs.org/) and our [Special theme](https://vuepress-theme-default-plus.lando.dev).
+If you are more interested in the internals of the docs they use [VitePress](https://vitepress.dev/) and our [SPECIAL THEME](https://vitepress-theme-default-plus.lando.dev).
 
 ## Testing
 
-It's best to familiarize yourself with how Lando [does testing](https://docs.lando.dev/contrib/contrib-testing.html) in general before proceeding.
+It's best to familiarize yourself with how Lando [does testing](https://docs.lando.dev/contrib/coder.html) in general before proceeding.
 
 ### Unit Tests
 
-Generally, unit testable code should be placed in `lib` and then the associated test in `tests` in the form `FILE-BEING-TESTED.spec.js`. Here is an example:
+Generally, unit testable code should be placed in `utils` and then the associated test in `tests` in the form `FILE-BEING-TESTED.spec.js`. Here is an example:
 
 ```bash
 ./
-|-- lib
+|-- utils
     |-- stuff.js
 |-- test
     |-- stuff.spec.js
@@ -113,21 +111,18 @@ Destroy tests
 lando destroy -y
 ```
 
-Note that the headers here are important and are defined in our `npm run generate:tests` script. The _Start up tests_ header specifies things that should run before the main series of tests. _Verification commands_ is the main body of tests and is required. _Destroy tests_ specifies any needed clean up commands to run.
+Note that the headers here are important. The _Start up tests_ header specifies things that should run before the main series of tests. _Verification commands_ is the main body of tests and is required. _Destroy tests_ specifies any needed clean up commands to run.
 
 If you check out the various READMEs in our [examples](https://github.com/lando/wordpress/tree/main/examples) you will notice that they are all Leia tests.
 
 Before running all or some of the tests you will need to generate them.
 
 ```bash
-# Generate tests
-npm run generate:tests
-
 # Run ALL the tests, this will likely take a long time
 npm run test:leia
 
 # Run the tests for a single example
-npm run leia examples/mariadb-10.2/README.md -c 'Destroy tests'
+npx leia examples/mariadb-10.2/README.md -c 'Destroy tests'
 ```
 
 If you've created new testable examples then you will also need to let GitHub Actions know so they can run on pull requests.
@@ -140,15 +135,12 @@ To add the new tests to the workflow just modify `jobs.leia-tests.strategy.matri
 jobs:
   leia-tests:
     strategy:
+      fail-fast: false
       matrix:
-        leia-tests:
-            # This should be the filename, without .leia.js extension in the test directory
-            # NOTE that you will need to run npm run generate:tests to see these
-          - test: platform-sh-maria-db-10-1-example
-            # This should be the directory that the test was generated from
-            source: examples/mariadb-10.2
-          - test: platform-sh-maria-db-10-2-example
-            source: examples/mariadb-10.2
+        leia-test:
+          - examples/2.1
+          - examples/2.2
+
 ```
 
 Now open a pull request and the new tests should run!
@@ -170,4 +162,4 @@ npm install @lando/wordpress@edge
 
 ## Contribution
 
-If you want to contribute code then just follow [this flow](https://guides.github.com/introduction/flow/).
+If you want to contribute code then just follow [this flow](https://docs.github.com/en/get-started/using-github/github-flow).

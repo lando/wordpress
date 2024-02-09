@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  unit-tests:
+  docs-tests:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -26,6 +26,6 @@ jobs:
 
       # Run tests
       - name: Run linter
-        run: npm run docs:lint
+        run: npm run lint
       - name: Test build
         run: npm run docs:build

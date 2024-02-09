@@ -5,9 +5,9 @@ description: Learn how to configure the Lando WordPress recipe.
 
 # Configuration
 
-While Lando [recipes](https://docs.lando.dev/config/recipes.html) set sane defaults so they work out of the box, they are also [configurable](https://docs.lando.dev/config/recipes.html#config).
+While Lando [recipes](https://docs.lando.dev/core/v3/recipes.html) set sane defaults so they work out of the box, they are also [configurable](https://docs.lando.dev/core/v3/recipes.html#config).
 
-Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/config/lando.html). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/config/recipes.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/core/v3). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/core/v3/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
 recipe: wordpress
@@ -25,13 +25,13 @@ config:
     vhosts: SEE BELOW
 ```
 
-Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/config/recipes.html#extending-and-overriding-recipes).
+Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/core/v3/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a php version
 
 You can set `php` to any version that is available in our [php service](https://docs.lando.dev/php). However, you should consult the [WordPress requirements](https://wordpress.org/about/requirements/) to make sure that version is actually supported by WordPress itself.
 
-The [recipe config](https://docs.lando.dev/config/recipes.html#config) to set the WordPress recipe to use `php` version `7.1` is shown below:
+The [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the WordPress recipe to use `php` version `7.1` is shown below:
 
 ```yaml
 recipe: wordpress
@@ -163,7 +163,7 @@ if (getenv('LANDO_INFO')) {
 }
 ```
 
-We also recommend you check out [this helpful doc](https://wordpress.org/support/article/editing-wp-config-php/) on the `wp-config.php` file.
+We also recommend you check out [this helpful doc](https://wordpress.org/documentation/article/editing-wp-config-php/) on the `wp-config.php` file.
 
 
 ## Connecting to your database
@@ -189,7 +189,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default WordPress config](https://github.com/lando/wordpress/tree/main/recipes/wordpress) with your own.
+You may need to override our [default WordPress config](https://github.com/lando/wordpress/tree/main/builders) with your own.
 
 If you do this, you must use files that exist inside your application and express them relative to your project root as shown below:
 

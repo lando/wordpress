@@ -40,7 +40,7 @@ config:
 ```
 ## Choosing a composer version
 
-You can set `composer_version` to any version that is available in our [php service](https://docs.lando.dev/php/config.html#installing-composer).
+You can set `composer_version` to any version that is available in our [php service](https://docs.lando.dev/plugins/php/config.html#installing-composer).
 
 ```yaml
 recipe: wordpress

@@ -37,6 +37,16 @@ lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer
 # Should be running mysql 5.7 by default
 lando mysql -V | grep 5.7
 
+# Should have COMPOSER_MEMORY_LIMIT set to -1
+lando ssh -s appserver -c "env" | grep "COMPOSER_MEMORY_LIMIT=-1"
+
+# Should allow environment variable PHP_MEMORY_LIMIT to work if used in config file
+lando ssh -s appserver -c "curl -L appserver_nginx/info.php" | grep memory_limit | grep 2G
+
+# Should have unlimited memory for php for CLI opts
+lando php -i | grep memory_limit | grep -e "-1"
+lando ssh -s appserver -c "php -i" | grep "memory_limit" | grep -e "-1"
+
 # Should be able to connect to the database with the default creds
 lando mysql wordpress -e quit
 
@@ -44,7 +54,7 @@ lando mysql wordpress -e quit
 lando php -m | grep Xdebug
 
 # Should be using custom config files
-lando ssh -s appserver -c "curl -L appserver_nginx/info.php" | grep memory_limit | grep 513M
+lando ssh -s appserver -c "curl -L appserver_nginx/info.php" | grep max_execution_time | grep 92
 lando ssh -s appserver_nginx -c "cat /opt/bitnami/nginx/conf/vhosts/lando.conf" | grep server_name | grep pirog
 lando mysql -u root -e "show variables;" | grep thread_cache_size | grep 12
 ```

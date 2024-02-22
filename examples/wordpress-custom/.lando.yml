@@ -12,6 +12,12 @@ config:
     php: config/php.ini
     vhosts: config/default.conf
 
+services:
+  appserver:
+    overrides:
+      environment:
+        PHP_MEMORY_LIMIT: 2G
+
 # do not remove this
 plugins:
   "@lando/wordpress": ../..

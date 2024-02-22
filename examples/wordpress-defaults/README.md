@@ -34,6 +34,16 @@ lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
 # Should be running mysql 5.7 by default
 lando mysql -V | grep 5.7
 
+# Should have COMPOSER_MEMORY_LIMIT set to -1
+lando ssh -s appserver -c "env" | grep "COMPOSER_MEMORY_LIMIT=-1"
+
+# Should have a 1G php mem limit on appserver
+lando ssh -s appserver -c "curl http://localhost/info.php" | grep "memory_limit" | grep "1G"
+
+# Should have unlimited memory for php for CLI opts
+lando php -i | grep memory_limit | grep -e "-1"
+lando ssh -s appserver -c "php -i" | grep "memory_limit" | grep -e "-1"
+
 # Should not enable xdebug by default
 lando php -m | grep xdebug || echo $? | grep 1
 

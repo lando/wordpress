@@ -5,6 +5,10 @@
 * Added support for `php:8.3` [#39](https://github.com/lando/wordpress/issues/39)
 * Added support for `php:8.2` [#39](https://github.com/lando/wordpress/issues/39)
 
+### Fixes
+
+* Fixed `CRITICAL` issue with default config files not loading correctly
+
 ### Internal
 
 * Updated to `@lando/php@1.2.0`

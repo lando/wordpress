@@ -1,5 +1,6 @@
 # WordPress single site rules.
 # Designed to be included in any server {} block.
+# LANDOWORDPRESSNGINXCONF
 
 # Upstream to abstract backend connection(s) for php
 upstream php {

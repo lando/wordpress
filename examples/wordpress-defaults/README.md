@@ -40,6 +40,8 @@ lando php -m | grep xdebug || echo $? | grep 1
 # Should use the default database connection info
 lando mysql wordpress -e quit
 
+# Should use the correct default config files
+
 # Should use composer 2 by default
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."
 ```

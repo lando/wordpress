@@ -30,6 +30,9 @@ lando ssh -s appserver -c "curl -IL appserver_nginx" | grep Server | grep nginx
 # Should use nginx 1.25 by defualt
 lando nginx -v 2>&1 | grep "nginx version" | grep "nginx/1.25"
 
+# Should load the correct default nginx config
+fail
+
 # Should use the php version specified by the user eg 7.4
 lando php -v | grep "PHP 7.4"
 ```

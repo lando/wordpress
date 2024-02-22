@@ -221,6 +221,7 @@ module.exports = {
       ));
       // Rebase on top of any default config we might already have
       options.defaultFiles = _.merge({}, getConfigDefaults(_.cloneDeep(options)), options.defaultFiles);
+
       options.services = _.merge({}, getServices(options), options.services);
       options.tooling = _.merge({}, getTooling(options), options.tooling);
       // Switch the proxy if needed

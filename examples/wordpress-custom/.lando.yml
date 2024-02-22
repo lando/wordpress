@@ -1,7 +1,7 @@
 name: wordpress-custom
 recipe: wordpress
 config:
-  php: '7.4'
+  php: '8.3'
   composer_version: '2.0.7'
   via: nginx:1.17
   webroot: bob
@@ -15,4 +15,3 @@ config:
 # do not remove this
 plugins:
   "@lando/wordpress": ../..
-

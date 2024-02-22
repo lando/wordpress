@@ -17,10 +17,10 @@ lando poweroff
 # Should initialize the latest WordPress codebase
 rm -rf mysql8 && mkdir -p mysql8 && cd mysql8
 lando init --source remote --remote-url https://wordpress.org/latest.tar.gz --recipe wordpress --webroot wordpress --name lando-wordpress-mysql8 --option database=mysql:8.0.22
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 
 # Should start up successfully
 cd mysql8
-cp ../../.lando.local.yml .
 lando start
 ```
 
@@ -54,6 +54,11 @@ lando php -m | grep xdebug || echo $? | grep 1
 # Should use the default database connection info
 cd mysql8
 lando mysql -uwordpress -pwordpress wordpress -e quit
+
+# Should use the defauly mysql8 config file
+cd mysql
+lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOWORDPRESSMYSQL8CNF"
+lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 
 # Should have the 2.x wp-cli
 cd mysql8

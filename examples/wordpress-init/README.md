@@ -17,10 +17,10 @@ lando poweroff
 # Should initialize the latest WordPress codebase
 rm -rf wordpress && mkdir -p wordpress && cd wordpress
 lando init --source remote --remote-url https://wordpress.org/latest.tar.gz --recipe wordpress --webroot wordpress --name lando-wordpress
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 
 # Should start up successfully
 cd wordpress
-cp ../../.lando.local.yml .
 lando start
 ```
 

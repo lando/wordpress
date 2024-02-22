@@ -181,6 +181,8 @@ const getConfigDefaults = options => {
       delete options.defaultFiles[type];
     }
   });
+
+  return options.defaultFiles;
 };
 
 /*
@@ -196,7 +198,7 @@ module.exports = {
   parent: '_recipe',
   config: {
     build: [],
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config'),
     config: {},
     database: 'mysql:5.7',
     defaultFiles: {

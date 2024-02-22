@@ -1,6 +1,6 @@
 #
 # The MySQL database server configuration file for Lando
-#
+# LANDOWORDPRESSMYSQLCNF
 
 [mysqld]
 #
@@ -71,7 +71,7 @@ max_binlog_size = 100M
 #innodb_buffer_pool_size = 384M
 #innodb_additional_mem_pool_size = 20M
 # Set .._log_file_size to 25 % of buffer pool size
-innodb_log_file_size = 100M
+innodb_log_file_size = 101M
 #innodb_log_buffer_size = 8M
 innodb_flush_log_at_trx_commit = 0
 #innodb_lock_wait_timeout = 50
@@ -82,7 +82,7 @@ innodb_open_files       = 256
 innodb_io_capacity      = 512
 innodb_flush_method     = O_DIRECT
 innodb_thread_concurrency = 8
-innodb_lock_wait_timeout = 120
+innodb_lock_wait_timeout = 121
 #
 # * Security Features
 #

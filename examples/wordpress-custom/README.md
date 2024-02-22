@@ -28,8 +28,8 @@ lando ssh -s appserver -c "curl -L appserver_nginx" | grep "HI BOB"
 lando ssh -s appserver_nginx -c "nginx -v" 2>&1 | grep "nginx version" | grep "nginx/1.17"
 lando ssh -s appserver -c "curl -IL appserver_nginx" | grep Server | grep nginx
 
-# Should use php 7.4
-lando php -v | grep "PHP 7.4"
+# Should use php 8.3
+lando php -v | grep "PHP 8.3"
 
 # Should use composer 2.0.7
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2.0.7"

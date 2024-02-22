@@ -5,7 +5,6 @@ config:
   webroot: web
   php: 7.4
 
-
 tooling:
   nginx:
     service: appserver_nginx

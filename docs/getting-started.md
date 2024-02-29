@@ -16,8 +16,8 @@ Before you get started with this recipe we assume that you have:
 
 Try out the relevant commands below to spin up a new Landoified vanilla WordPress site.
 
-:::: code-group
-::: code-group-item bash
+::: code-group
+
 ```bash
 # Create folder and enter it
 mkdir wordpress && cd wordpress
@@ -53,8 +53,7 @@ lando wp core install \
   --admin_email=admin@my-first-wordpress-app.lndo.site \
   --path=wordpress
 ```
-:::
-::: code-group-item powershell
+
 ```powershell
 # Create folder and enter it
 New-Item -ItemType Directory -Name "wordpress" | Set-Location
@@ -90,7 +89,7 @@ lando wp core install `
   --admin_email=admin@my-first-wordpress-app.lndo.site `
   --path=wordpress
 ```
-::::
+:::
 
 Log in with `admin` and `password` at `https://my-first-wordpress-app.lndo.site/wp-login.php`
 

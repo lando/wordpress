@@ -172,7 +172,7 @@ const getConfigDefaults = options => {
   const dbConfig = getDatabaseType(options);
   const database = _.first(dbConfig.split(':'));
   const version = _.last(dbConfig.split(':')).substring(0, 2);
-  if (database === 'laravel-mysql' || database === 'mysql' || database === 'mariadb') {
+  if (database === 'wordpress-mysql' || database === 'mysql' || database === 'mariadb') {
     if (version === '8.') {
       options.defaultFiles.database = 'mysql8.cnf';
     } else {

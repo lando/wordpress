@@ -65,11 +65,14 @@ const getServiceConfig = (options, types = ['php', 'server', 'vhosts']) => {
   return config;
 };
 
-// Tooling defaults
+/*
+ * Helper to get database type
+ */
 const getDatabaseType = options => {
   return _.get(options, '_app.config.services.database.type', options.database) ?? 'mysql';
 };
 
+// Tooling defaults
 const toolingDefaults = {
   'composer': {
     service: 'appserver',

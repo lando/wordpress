@@ -1,0 +1,11 @@
+name: wordpress-downstreamer-1
+recipe: wordpress
+
+services:
+  database:
+    type: mysql:8.0
+
+# do not remove this
+plugins:
+  "@lando/wordpress": ../..
+  "@lando/mysql": ../../node_modules/@lando/mysql

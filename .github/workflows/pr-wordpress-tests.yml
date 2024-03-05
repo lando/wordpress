@@ -14,6 +14,8 @@ jobs:
         leia-test:
           - examples/wordpress-custom
           - examples/wordpress-defaults
+          - examples/wordpress-downstreamer-1
+          - examples/wordpress-downstreamer-2
           - examples/wordpress-export
           - examples/wordpress-import
           - examples/wordpress-init

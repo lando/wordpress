@@ -1,3 +1,9 @@
+## v1.2.1 - [March 4, 2024](https://github.com/lando/wordpress/releases/tag/v1.2.1)
+
+### Fixes
+
+* Improved `database` selection for purposes of `config` loading, fixes some `database` bootup issues when the `database` type is overriden downstream
+
 ## v1.2.0 - [February 22, 2024](https://github.com/lando/wordpress/releases/tag/v1.2.0)
 
 ### New Features

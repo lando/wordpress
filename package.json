@@ -43,12 +43,12 @@
   },
   "dependencies": {
     "@lando/apache": "^1.0.0",
-    "@lando/mariadb": "^1.0.0",
+    "@lando/mariadb": "^1.1.0",
     "@lando/mssql": "^1.0.0",
-    "@lando/mysql": "^0.9.0",
+    "@lando/mysql": "^1.1.0",
     "@lando/nginx": "^0.11.0",
     "@lando/php": "^1.2.0",
-    "@lando/postgres": "^0.10.0",
+    "@lando/postgres": "^1.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

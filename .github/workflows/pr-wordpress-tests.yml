@@ -40,13 +40,13 @@ jobs:
       - name: Install NPM dependencies
         run: npm clean-install --production --prefer-offline --frozen-lockfile
       - name: Bundle Deps
-        uses: lando/prepare-release-action@v2
+        uses: lando/prepare-release-action@v3
         with:
           lando-plugin: true
           version: dev
           sync: false
       - name: Setup lando ${{ matrix.lando-version }}
-        uses: lando/setup-lando@v2
+        uses: lando/setup-lando@v3
         with:
           lando-version: ${{ matrix.lando-version }}
           config: |

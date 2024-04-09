@@ -38,7 +38,7 @@ function sidebar() {
     },
     {
       text: 'Contribution',
-      collapsed: true,
+      collapsed: false,
       items: [
         {text: 'Development', link: '/development'},
         {text: 'Team', link: '/team'},
@@ -46,7 +46,7 @@ function sidebar() {
     },
     {
       text: 'Help & Support',
-      collapsed: true,
+      collapsed: false,
       items: [
         {text: 'GitHub', link: 'https://github.com/lando/wordpress/issues/new/choose'},
         {text: 'Slack', link: 'https://www.launchpass.com/devwithlando'},

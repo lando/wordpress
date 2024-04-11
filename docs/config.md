@@ -163,7 +163,7 @@ if (getenv('LANDO_INFO')) {
 }
 ```
 
-We also recommend you check out [this helpful doc](https://wordpress.org/documentation/article/editing-wp-config-php/) on the `wp-config.php` file.
+We also recommend you check out [this helpful doc](https://developer.wordpress.org/advanced-administration/wordpress/wp-config/) on the `wp-config.php` file.
 
 
 ## Connecting to your database

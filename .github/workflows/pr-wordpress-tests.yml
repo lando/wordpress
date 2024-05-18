@@ -19,6 +19,8 @@ jobs:
           - examples/wordpress-export
           - examples/wordpress-import
           - examples/wordpress-init
+          - examples/wordpress-mariadb
+          - examples/wordpress-mariadb-mysql
           - examples/wordpress-mysql8
           - examples/wordpress-nginx
         lando-version:

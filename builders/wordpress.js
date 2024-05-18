@@ -117,7 +117,20 @@ const toolingDefaults = {
   },
 };
 
-// Default DB cli commands
+// MariaDB cli commands
+const mariadbCli = {
+  service: ':host',
+  description: 'Drops into a MariaDB shell on a database service',
+  cmd: 'mariadb -uroot',
+  options: {
+    host: {
+      description: 'The database service to use',
+      default: 'database',
+      alias: ['h'],
+    },
+  },
+};
+// MySQL DB cli commands
 const mysqlCli = {
   service: ':host',
   description: 'Drops into a MySQL shell on a database service',
@@ -130,6 +143,7 @@ const mysqlCli = {
     },
   },
 };
+// Postgres DB cli commands
 const postgresCli = {
   service: ':host',
   description: 'Drops into a psql shell on a database service',
@@ -149,13 +163,19 @@ const postgresCli = {
  */
 const getDbTooling = database => {
   // Make sure we strip out any version number
-  database = database.split(':')[0];
+  const db = database.split(':')[0];
+  const ver = database.split(':')[1];
   // Choose wisely
-  if (_.includes(['mysql', 'mariadb'], database)) {
+  if (db === 'mysql') {
     return {mysql: mysqlCli};
-  } else if (database === 'postgres') {
+  } else if (db === 'mariadb' && ver < 10.4) {
+    // Use mysql command for MariaDB 10.3.x and below
+    return {mysql: mysqlCli};
+  } else if (db === 'mariadb') {
+    return {mariadb: mariadbCli};
+  } else if (db === 'postgres') {
     return {psql: postgresCli};
-  } else if (database === 'mongo') {
+  } else if (db === 'mongo') {
     return {mongo: {
       service: 'database',
       description: 'Drop into the mongo shell',

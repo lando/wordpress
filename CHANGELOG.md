@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.4.0 - [May 27, 2024](https://github.com/lando/wordpress/releases/tag/v1.4.0)
+
 * Updated mariadb plugin [#51](https://github.com/lando/mariadb/issues/51)
 * Use mysql command for MariaDB 10.3.x and below
 * Cleaned up test comments

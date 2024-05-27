@@ -27,7 +27,7 @@ lando mysql -V | grep 8.0
 # Should use the default database connection info
 lando mysql -uwordpress -pwordpress wordpress -e quit
 
-# Should use the defauly mysql8 config file
+# Should use the default mysql8 config file
 lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOWORDPRESSMYSQL8CNF"
 lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 ```

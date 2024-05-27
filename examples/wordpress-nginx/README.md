@@ -27,7 +27,7 @@ lando ssh -s appserver -c "curl -L appserver_nginx" | grep "NGINX"
 # Should run using nginx if specified
 lando ssh -s appserver -c "curl -IL appserver_nginx" | grep Server | grep nginx
 
-# Should use nginx 1.25 by defualt
+# Should use nginx 1.25 by default
 lando nginx -v 2>&1 | grep "nginx version" | grep "nginx/1.25"
 
 # Should load the correct default nginx config

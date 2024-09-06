@@ -1,4 +1,7 @@
 name: wordpress-custom
+proxy:
+  appserver_nginx:
+    - another.wordpress-custom.lndo.site
 recipe: wordpress
 config:
   php: '8.3'

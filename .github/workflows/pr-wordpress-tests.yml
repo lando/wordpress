@@ -26,7 +26,7 @@ jobs:
         lando-version:
           - 3-dev-slim
         os:
-          - ubuntu-22.04
+          - ubuntu-24.04
         node-version:
           - '18'
     steps:

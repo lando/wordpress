@@ -1,5 +1,14 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## Bug Fixes
+
+* Fixed bug causing default `proxy` settings to be clobbered by user specified ones
+
+## Internal
+
+* Updated DevOps to use new `lando exec`
+* Updated `ubuntu` test runners to `24.04`
+
 ## v1.4.0 - [May 27, 2024](https://github.com/lando/wordpress/releases/tag/v1.4.0)
 
 * Updated mariadb plugin [#51](https://github.com/lando/mariadb/issues/51)

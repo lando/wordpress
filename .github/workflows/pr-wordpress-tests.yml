@@ -24,7 +24,7 @@ jobs:
           - examples/wordpress-mysql8
           - examples/wordpress-nginx
         lando-version:
-          - 3-dev-slim
+          - 3-edge-slim
         os:
           - ubuntu-24.04
         node-version:

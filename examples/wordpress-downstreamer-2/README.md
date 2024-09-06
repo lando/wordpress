@@ -4,8 +4,7 @@ This example exists primarily to test the following documentation:
 
 * [Wordpress Recipe](https://docs.lando.dev/wordpress/config.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -15,8 +14,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -28,12 +26,11 @@ lando mysql -V | grep 8.0
 lando mysql -uwordpress -pwordpress wordpress -e quit
 
 # Should use the default mysql8 config file
-lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDOWORDPRESSMYSQL8CNF"
+lando exec database -- cat /opt/bitnami/mysql/conf/my_custom.cnf | grep "LANDOWORDPRESSMYSQL8CNF"
 lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

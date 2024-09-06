@@ -4,8 +4,7 @@ This example exists primarily to test the following documentation:
 
 * [Wordpress Recipe](https://docs.lando.dev/wordpress/tooling.html#importing-your-database)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -15,8 +14,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -42,15 +40,14 @@ lando db-export -h database database2.dump.sql
 
 # Should export to absolute path if specified
 lando db-export /tmp/database.dump.sql
-lando ssh -s database -c "stat /tmp/database.dump.sql.gz"
+lando exec database -- stat /tmp/database.dump.sql.gz
 
 # Should dump ungizzeed stdout
 lando db-export --stdout > thing.sql
 cat thing.sql | grep Dump
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

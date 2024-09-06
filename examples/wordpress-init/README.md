@@ -5,8 +5,7 @@ This example exists primarily to test the following documentation:
 
 * [WordPress Recipe](https://docs.devwithlando.io/tutorials/wordpress.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,15 +23,14 @@ cd wordpress
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should return the WordPress installation page by default
 cd wordpress
-lando ssh -s appserver -c "curl -L localhost" | grep "WordPress"
+lando exec appserver -- curl -L localhost | grep "WordPress"
 
 # Should use 7.4 as the default php version
 cd wordpress
@@ -40,8 +38,8 @@ lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd wordpress
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd wordpress
@@ -68,8 +66,7 @@ cd wordpress/wordpress
 lando wp core install --url=lando-wordpress.lndo.site --title=LandoPress --admin_user=admin --admin_email=mike@pirog.com --skip-email
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

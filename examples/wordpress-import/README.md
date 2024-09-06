@@ -4,8 +4,7 @@ This example exists primarily to test the following documentation:
 
 * [Wordpress Recipe](https://docs.lando.dev/wordpress/tooling.html#importing-your-database)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -15,8 +14,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -33,7 +31,7 @@ lando db-import -h database subdir/test.sql
 lando mysql wordpress -e "show tables;" | grep users
 
 # Should be able to use db-import events
-lando ssh -s database -c "cat /tmp/iran.txt"
+lando exec database -- cat /tmp/iran.txt
 
 # Should persist data after a rebuild
 lando rebuild -y
@@ -44,8 +42,7 @@ lando db-import big-bad-dump.sql
 lando db-import big-bad-dump.sql
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

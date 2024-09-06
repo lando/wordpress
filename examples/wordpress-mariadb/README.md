@@ -5,8 +5,7 @@ This example exists primarily to test the following documentation:
 
 * [WordPress Recipe](https://docs.devwithlando.io/tutorials/wordpress.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,15 +23,14 @@ cd mariadb
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should return the WordPress installation page by default
 cd mariadb
-lando ssh -s appserver -c "curl -L localhost" | grep "WordPress"
+lando exec appserver -- curl -L localhost | grep "WordPress"
 
 # Should use 8.3 as the default php version
 cd mariadb
@@ -40,8 +38,8 @@ lando php -v | grep "PHP 8.3."
 
 # Should be running apache 2.4 by default
 cd mariadb
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mariadb 11.3.x by default
 cd mariadb
@@ -57,7 +55,7 @@ lando mariadb -uwordpress -pwordpress wordpress -e quit
 
 # Should use the default mariadb config file
 cd mariadb
-lando ssh -s database -c "cat /opt/bitnami/mariadb/conf/my_custom.cnf" | grep "innodb_lock_wait_timeout = 121"
+lando exec database -- cat /opt/bitnami/mariadb/conf/my_custom.cnf | grep "innodb_lock_wait_timeout = 121"
 lando mariadb -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 
 # Should have the 2.x wp-cli
@@ -73,8 +71,7 @@ cd mariadb/wordpress
 lando wp core install --url=lando-wordpress.lndo.site --title=LandoPress --admin_user=admin --admin_email=mike@pirog.com --skip-email
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

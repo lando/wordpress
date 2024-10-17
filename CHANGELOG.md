@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+  * Updated lando/php to v1.4.0.
+
 ## v1.5.0 - [September 30, 2024](https://github.com/lando/wordpress/releases/tag/v1.5.0)
 
 * Updated lando/mariadb to v1.5.0.

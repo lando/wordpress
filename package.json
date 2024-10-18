@@ -48,7 +48,7 @@
     "@lando/mssql": "^1.0.0",
     "@lando/mysql": "^1.3.0",
     "@lando/nginx": "^0.11.0",
-    "@lando/php": "^1.4.0",
+    "@lando/php": "^1.5.0",
     "@lando/postgres": "^1.1.0",
     "lodash": "^4.17.21"
   },

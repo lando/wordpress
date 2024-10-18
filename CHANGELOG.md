@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.0 - [October 18, 2024](https://github.com/lando/wordpress/releases/tag/v1.6.0)
+
  * Updated lando/php to v1.5.0.
 
 ## v1.5.0 - [September 30, 2024](https://github.com/lando/wordpress/releases/tag/v1.5.0)

@@ -10,6 +10,7 @@ config:
   webroot: bob
   database: mysql:5.7
   xdebug: true
+  ssl: true
   config:
     database: config/mysql.cnf
     php: config/php.ini

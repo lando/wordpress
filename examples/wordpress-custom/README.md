@@ -45,6 +45,10 @@ lando exec appserver -- curl -L appserver_nginx/info.php | grep memory_limit | g
 lando php -i | grep memory_limit | grep -e "-1"
 lando exec appserver -- php -i | grep "memory_limit" | grep -e "-1"
 
+# Should serve and be accessible over ssl if specified
+lando exec appserver_nginx -- curl https://localhost
+lando exec appserver -- curl https://appserver_nginx
+
 # Should be able to connect to the database with the default creds
 lando mysql wordpress -e quit
 

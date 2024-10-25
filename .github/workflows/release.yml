@@ -11,13 +11,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       TERM: xterm
-      PRERELEASE_TAG: edge
     strategy:
       matrix:
         os:
           - ubuntu-24.04
         node-version:
-          - '18'
+          - '20'
     steps:
       # Install deps and cache
       - name: Checkout code
@@ -28,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
           cache: npm
-      - name: Install NPM dependencies
+      - name: Install dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
 
       # Let's do tests rq just to make sure we dont push something that is fundamentally broken
@@ -49,14 +48,23 @@ jobs:
       # Deploy
       - name: Publish to npm
         run: |
+          VERSION=$(node -p "require('./package.json').version")
+          PACKAGE=$(node -p "require('./package.json').name")
+
           if [ "${{ github.event.release.prerelease }}" ==  "false" ]; then
             npm publish --access public --dry-run
             npm publish --access public
-            echo "::notice title=Published ${{ github.ref_name }} to @${{ github.repository }}::This is a stable release published to the default 'latest' npm tag"
+            npm dist-tag add "$PACKAGE@$VERSION" edge
+
+            echo "::notice title=Published $VERSION to $PACKAGE::This is a stable release published to the default 'latest' npm tag"
+            echo "::notice title=Updated latest tag to $VERSION::The stable tag now points to $VERSION"
+            echo "::notice title=Updated edge tag to $VERSION::The edge tag now points to $VERSION"
           else
-            npm publish --access public --tag ${{ env.PRERELEASE_TAG }} --dry-run
-            npm publish --access public --tag ${{ env.PRERELEASE_TAG }}
-            echo "::notice title=Published ${{ github.ref_name }} to @${{ github.repository }}@${{ env.PRERELEASE_TAG }}::This is a pre-release published to the '${{ env.PRERELEASE_TAG }}' npm tag"
+            npm publish --access public --tag edge --dry-run
+            npm publish --access public --tag edge
+
+            echo "::notice title=Published $VERSION to $PACKAGE::This is a prerelease published to the 'edge' npm tag"
+            echo "::notice title=Updated edge tag to $VERSION::The edge tag now points to $VERSION"
           fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_DEPLOY_TOKEN}}

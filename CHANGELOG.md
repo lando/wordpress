@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.7.0 - [October 25, 2024](https://github.com/lando/wordpress/releases/tag/v1.7.0)
+
 * Updated release process to generate an edge release when stable releases are created.
 * Removed unnecessary dependency lando/nginx.
 

@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/vitepress-theme-default-plus@v1.1.0-beta.18](https://github.com/lando/vitepress-theme-default-plus/releases/tag/v1.1.0-beta.18).
+
 ## v1.7.0 - [October 25, 2024](https://github.com/lando/wordpress/releases/tag/v1.7.0)
 
 * Updated release process to generate an edge release when stable releases are created.

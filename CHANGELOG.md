@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.7.3 - [December 6, 2024](https://github.com/lando/wordpress/releases/tag/v1.7.3)
+
 * Updated the version index.md to get Docuverse page to build correctly.
 
 ## v1.7.2 - [December 4, 2024](https://github.com/lando/wordpress/releases/tag/v1.7.2)

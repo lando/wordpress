@@ -9,8 +9,8 @@ description: Learn how to get started with the Lando WordPress recipe.
 Before you get started with this recipe we assume that you have:
 
 1. [Installed Lando](https://docs.lando.dev/getting-started/installation.html) and gotten familiar with [its basics](https://docs.lando.dev/cli/).
-2. [Initialized](https://docs.lando.dev/cli/init.html) a [Landofile](https://docs.lando.dev/core/v3) for your codebase for use with this recipe.
-3. Read about the various [services](https://docs.lando.dev/core/v3/lando-service.html), [tooling](https://docs.lando.dev/core/v3/tooling.html), [events](https://docs.lando.dev/core/v3/events.html) and [routing](https://docs.lando.dev/core/v3/proxy.html) Lando offers.
+2. [Initialized](https://docs.lando.dev/cli/init.html) a [Landofile](https://docs.lando.dev/landofile/) for your codebase for use with this recipe.
+3. Read about the various [services](https://docs.lando.dev/services/lando-3.html), [tooling](https://docs.lando.dev/landofile/tooling.html), [events](https://docs.lando.dev/landofile/events.html) and [routing](https://docs.lando.dev/landofile/proxy.html) Lando offers.
 
 ## Quick Start
 
@@ -47,7 +47,7 @@ lando wp config create \
 # Install WordPress
 lando wp core install \
   --url=https://my-first-wordpress-app.lndo.site/ \
-  --title="My First Wordpress App" \
+  --title="My First WordPress App" \
   --admin_user=admin \
   --admin_password=password \
   --admin_email=admin@my-first-wordpress-app.lndo.site \
@@ -83,7 +83,7 @@ lando wp config create `
 # Install WordPress
 lando wp core install `
   --url=https://my-first-wordpress-app.lndo.site/ `
-  --title="My First Wordpress App" `
+  --title="My First WordPress App" `
   --admin_user=admin `
   --admin_password=password `
   --admin_email=admin@my-first-wordpress-app.lndo.site `

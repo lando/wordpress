@@ -22,11 +22,11 @@ const loadScripts = options => {
 module.exports = {
   name: 'wordpress-php',
   parent: '_appserver',
-  builder: (parent, config) => class WordpressPhp extends LandoPhp.builder(parent, LandoPhp.config) {
+  builder: parent => class WordpressPhp extends LandoPhp.builder(parent, LandoPhp.config) {
     constructor(id, options = {}, factory) {
       loadScripts(options);
       options.nginxServiceType = 'wordpress-nginx';
       super(id, options, factory);
-    };
+    }
   },
 };

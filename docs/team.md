@@ -1,5 +1,5 @@
 ---
-description: Learn about the team that made the Wordpress plugin.
+description: Learn about the team that made the WordPress plugin.
 layout: page
 title: Team
 ---
@@ -10,7 +10,7 @@ title: Team
       Team
     </template>
     <template #lead>
-      We are the people who brought Wordpress to Lando.
+      We are the people who brought WordPress to Lando.
     </template>
   </VPLTeamPageTitle>
   <VPLTeamMembers :members="members" size="small"/>

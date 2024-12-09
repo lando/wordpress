@@ -7,9 +7,9 @@ const LandoMssql = require('./../node_modules/@lando/mssql/builders/mssql.js');
 module.exports = {
   name: 'wordpress-mssql',
   parent: '_service',
-  builder: (parent, config) => class WordpressMssql extends LandoMssql.builder(parent, LandoMssql.config) {
+  builder: parent => class WordpressMssql extends LandoMssql.builder(parent, LandoMssql.config) {
     constructor(id, options = {}) {
       super(id, options, {services: _.set({}, options.name)});
-    };
+    }
   },
 };

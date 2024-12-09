@@ -14,8 +14,6 @@
     skipPatterns = [ ".rss", ".gif", ".jpg" ]
     checkExternal = true
 
-
-
 # Sets our asset optimization
 [build.processing.css]
   bundle = true
@@ -40,8 +38,6 @@
   package = "@netlify/plugin-lighthouse"
   [plugins.inputs.audits]
     output_path = "reports/lighthouse.html"
-
-
 
 # We need this so preview environments and the base site look ok on their own
 [[redirects]]

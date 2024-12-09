@@ -1,6 +1,6 @@
 ---
 title: Contact Us
-description: Get help and support for the Lando Wordpress Plugin
+description: Get help and support for the Lando WordPress Plugin
 ---
 
 # Contact Us

@@ -8,7 +8,7 @@ next: ./getting-started.html
 
 WordPress is open source software you can use to create a beautiful website, blog, or app.
 
-Lando offers a configurable [recipe](https://docs.lando.dev/core/v3/recipes.html) for developing [WordPress](https://wordpress.org/) apps.
+Lando offers a configurable [recipe](https://docs.lando.dev/landofile/recipes.html) for developing [WordPress](https://wordpress.org/) apps.
 
 #### Features of this plugin:
 

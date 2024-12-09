@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to install the Lando Wordpress Plugin.
+description: How to install the Lando WordPress Plugin.
 ---
 
 # Installation

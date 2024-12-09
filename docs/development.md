@@ -1,6 +1,6 @@
 ---
 title: Development
-description: Learn how to develop and contribute to the Lando Wordpress service
+description: Learn how to develop and contribute to the Lando WordPress service
 ---
 
 # Development
@@ -91,25 +91,31 @@ npm run test:unit
 
 We do end to end testing with our made-just-for-Lando testing framework [Leia](https://github.com/lando/leia). Leia allows us to define tests as a series of commented shell commands in human readable markdown files. Here is a simple example:
 
-```md
-Start up tests
---------------
+````md
+## Start up tests
 
+```bash
 # Should start up successfully
 lando start
+```
 
-Verification commands
----------------------
+## Verification commands
 
+```bash
 # Should be able to connect to all mariadb relationships
 lando mariadb main -e "show tables;"
 
-Destroy tests
--------------
+# Should do something else
+lando exec appserver -- some-command
+```
 
+## Destroy tests
+
+```bash
 # Should be able to destroy our app
 lando destroy -y
 ```
+````
 
 Note that the headers here are important. The _Start up tests_ header specifies things that should run before the main series of tests. _Verification commands_ is the main body of tests and is required. _Destroy tests_ specifies any needed clean up commands to run.
 

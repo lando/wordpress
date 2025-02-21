@@ -46,7 +46,7 @@
     "@lando/mariadb": "^1.6.3",
     "@lando/mssql": "^1.4.3",
     "@lando/mysql": "^1.4.4",
-    "@lando/php": "^1.6.3",
+    "@lando/php": "^1.7.1",
     "@lando/postgres": "^1.4.4",
     "lodash": "^4.17.21"
   },

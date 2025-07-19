@@ -3,7 +3,7 @@
   "description": "A Lando plugin that provides a tight integration with WordPress.",
   "version": "1.8.0",
   "author": "Mike Pirog @pirog",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "lando/wordpress",
   "bugs": "https://github.com/lando/wordpress/issues/new/choose",
   "homepage": "https://github.com/lando/wordpress",

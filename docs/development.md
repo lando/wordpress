@@ -13,7 +13,7 @@ At the very least you will need to have the following installed:
 
 * [Lando 3.21.0+](https://docs.lando.dev/getting-started/installation.html) preferably installed [from source](https://docs.lando.dev/install/source.html).
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-* [Node 18](https://nodejs.org/dist/latest-v18.x/)
+* [Node 20](https://nodejs.org/dist/latest-v20.x/)
 
 ## Installation
 

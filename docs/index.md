@@ -12,7 +12,7 @@ Lando offers a configurable [recipe](https://docs.lando.dev/landofile/recipes.ht
 
 #### Features of this plugin:
 
-* Configurable `php` version from `5.3` all the way to `8.3`
+* Configurable `php` version from `5.3` all the way to `8.4`
 * Configurable `webroot`
 * Configurable web server (`apache` or `nginx`)
 * Configurable database backend (`mariadb`, `mysql`, or `postgres`)

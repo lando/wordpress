@@ -1,7 +1,7 @@
 {
   "name": "@lando/wordpress",
   "description": "A Lando plugin that provides a tight integration with WordPress.",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "Mike Pirog @pirog",
   "license": "MIT",
   "repository": "lando/wordpress",

@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.9.0 - [September 2, 2025](https://github.com/lando/wordpress/releases/tag/v1.9.0)
+
 * Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace
 * Updated to [@lando/mariadb@1.7.0](https://github.com/lando/mariadb/releases/tag/v1.7.0)
 * Updated to [@lando/mysql@1.6.0](https://github.com/lando/mysql/releases/tag/v1.6.0)

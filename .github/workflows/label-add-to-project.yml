@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Add issue/PR to GitHub Project
         if: github.event.label.name == 'flag'
-        uses: actions/add-to-project@v1.0.0
+        uses: actions/add-to-project@v1.0.2
         with:
           project-url: https://github.com/orgs/lando/projects/7
           github-token: ${{ secrets.SHADOW_COUNCIL_ESCALATOR }}

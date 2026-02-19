@@ -1,5 +1,14 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.0 - [Unreleased](https://github.com/lando/wordpress/releases/tag/v1.10.0)
+
+* Updated to [@lando/php@1.10.0](https://github.com/lando/php/releases/tag/v1.10.0)
+* Fixed release workflow trigger to fire on `published` instead of `created`
+* Updated CI actions (`actions/checkout` to v6, `actions/setup-node` to v6, `actions/cache` to v5)
+* Updated README with PHP 8.5+ support and added maintainer
+* Removed Syncthing conflict files and added pattern to `.gitignore`
+* Pending dependabot bumps for `@lando/mariadb`, `@lando/postgres`, and `@lando/argv`
+
 ## v1.9.0 - [September 2, 2025](https://github.com/lando/wordpress/releases/tag/v1.9.0)
 
 * Switched images to [bitnamilegacy](https://github.com/bitnami/containers/issues/83267) namespace

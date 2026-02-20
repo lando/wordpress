@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.0 - [February 20, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.0)
+
 * Updated `@lando/php` to `^1.11.0` for MySQL client auto-detection fix
 
 ## v1.10.0 - [Unreleased](https://github.com/lando/wordpress/releases/tag/v1.10.0)

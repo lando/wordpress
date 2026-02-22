@@ -1,14 +1,16 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Updated `lando init` to set recommended PHP 8.3 and MySQL 8.0 versions in generated Landofile
+* Updated `lando init` to set recommended PHP 8.3 and MySQL
+* Added `wordpress-recommended` example with explicit version configuration
 * Updated to [@lando/php@1.11.1](https://github.com/lando/php/releases/tag/v1.11.1)
+* Updated to [@lando/argv@1.2.0](https://github.com/lando/argv/releases/tag/v1.2.0)
 
 ## v1.10.0 - [February 20, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.0)
 
 * Updated to [@lando/php@1.11.0](https://github.com/lando/php/releases/tag/v1.11.0)
 * Fixed release workflow trigger to fire on `published` instead of `created`
 * Updated CI actions (`actions/checkout` to v6, `actions/setup-node` to v6, `actions/cache` to v5)
-* Pending dependabot bumps for `@lando/mariadb`, `@lando/postgres`, and `@lando/argv`
+* Updated `@lando/mariadb`, `@lando/postgres`, and `@lando/argv` dependencies
 
 ## v1.9.0 - [September 2, 2025](https://github.com/lando/wordpress/releases/tag/v1.9.0)
 

@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.1 - [February 22, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.1)
+
 * Updated `lando init` to set recommended PHP 8.3 and MySQL
 * Added `wordpress-recommended` example with explicit version configuration
 * Updated to [@lando/php@1.11.1](https://github.com/lando/php/releases/tag/v1.11.1)

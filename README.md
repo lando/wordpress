@@ -20,6 +20,9 @@ Add a `wordpress` recipe to your Landofile
 ```yaml
 name: wordpress-app
 recipe: wordpress
+config:
+  php: '8.3'
+  database: mysql:8.0
 ```
 
 For more info you should check out the [docs](https://docs.lando.dev/wordpress):

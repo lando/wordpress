@@ -2,11 +2,7 @@
 
 ## v1.10.0 - [February 20, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.0)
 
-* Updated `@lando/php` to `^1.11.0` for MySQL client auto-detection fix
-
-## v1.10.0 - [Unreleased](https://github.com/lando/wordpress/releases/tag/v1.10.0)
-
-* Updated to [@lando/php@1.10.0](https://github.com/lando/php/releases/tag/v1.10.0)
+* Updated to [@lando/php@1.11.0](https://github.com/lando/php/releases/tag/v1.11.0)
 * Fixed release workflow trigger to fire on `published` instead of `created`
 * Updated CI actions (`actions/checkout` to v6, `actions/setup-node` to v6, `actions/cache` to v5)
 * Updated README with PHP 8.5+ support and added maintainer

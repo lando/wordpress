@@ -11,7 +11,7 @@
 * Updated to [@lando/php@1.11.0](https://github.com/lando/php/releases/tag/v1.11.0)
 * Fixed release workflow trigger to fire on `published` instead of `created`
 * Updated CI actions (`actions/checkout` to v6, `actions/setup-node` to v6, `actions/cache` to v5)
-* Pending dependabot bumps for `@lando/mariadb` and `@lando/postgres`
+* Pending dependabot bumps for `@lando/mariadb`, `@lando/postgres`, and `@lando/argv`
 
 ## v1.9.0 - [September 2, 2025](https://github.com/lando/wordpress/releases/tag/v1.9.0)
 

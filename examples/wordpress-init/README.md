@@ -32,18 +32,18 @@ Run the following commands to validate things are rolling as they should.
 cd wordpress
 lando exec appserver -- curl -L localhost | grep "WordPress"
 
-# Should use 7.4 as the default php version
+# Should use 8.3 as the default php version
 cd wordpress
-lando php -v | grep "PHP 7.4"
+lando php -v | grep "PHP 8.3"
 
 # Should be running apache 2.4 by default
 cd wordpress
 lando exec appserver -- apachectl -V | grep 2.4
 lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
-# Should be running mysql 5.7 by default
+# Should be running mysql 8.0 by default
 cd wordpress
-lando mysql -V | grep 5.7
+lando mysql -V | grep 8.0
 
 # Should not enable xdebug by default
 cd wordpress

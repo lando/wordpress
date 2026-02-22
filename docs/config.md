@@ -25,18 +25,32 @@ config:
     vhosts: SEE BELOW
 ```
 
+::: warning Always set explicit versions!
+We **strongly recommend** always setting `php` and `database` versions in your Landofile rather than relying on defaults. Defaults may change between releases and could result in unexpected behavior. For WordPress, the current recommended versions are:
+
+```yaml
+recipe: wordpress
+config:
+  php: '8.3'
+  database: mysql:8.0
+```
+
+See [WordPress server requirements](https://wordpress.org/about/requirements/) for the latest recommendations.
+:::
+
 Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/landofile/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a php version
 
 You can set `php` to any version that is available in our [php service](https://docs.lando.dev/plugins/php/index.html). However, you should consult the [WordPress requirements](https://wordpress.org/about/requirements/) to make sure that version is actually supported by WordPress itself.
 
-The [recipe config](https://docs.lando.dev/landofile/recipes.html#config) to set the WordPress recipe to use `php` version `7.1` is shown below:
+The [recipe config](https://docs.lando.dev/landofile/recipes.html#config) to set the WordPress recipe to use `php` version `8.3` is shown below:
 
 ```yaml
 recipe: wordpress
 config:
-  php: '7.1'
+  php: '8.3'
+  database: mysql:8.0
 ```
 ## Choosing a composer version
 
@@ -45,6 +59,8 @@ You can set `composer_version` to any version that is available in our [php serv
 ```yaml
 recipe: wordpress
 config:
+  php: '8.3'
+  database: mysql:8.0
   composer_version: '1.10.1'
 ```
 
@@ -57,6 +73,8 @@ By default, this recipe will be served by the default version of our [apache](ht
 ```yaml
 recipe: wordpress
 config:
+  php: '8.3'
+  database: mysql:8.0
   via: apache
 ```
 
@@ -65,6 +83,8 @@ config:
 ```yaml
 recipe: wordpress
 config:
+  php: '8.3'
+  database: mysql:8.0
   via: nginx
 ```
 
@@ -81,7 +101,8 @@ Also note that like the configuration of the `php` version you should consult th
 ```yaml
 recipe: wordpress
 config:
-  database: mysql
+  php: '8.3'
+  database: mysql:8.0
 ```
 
 #### Using MariaDB
@@ -89,7 +110,8 @@ config:
 ```yaml
 recipe: wordpress
 config:
-  database: mariadb
+  php: '8.3'
+  database: mariadb:10.6
 ```
 
 #### Using Postgres
@@ -97,14 +119,7 @@ config:
 ```yaml
 recipe: wordpress
 config:
-  database: postgres
-```
-
-#### Using a custom version
-
-```yaml
-recipe: wordpress
-config:
+  php: '8.3'
   database: postgres:14
 ```
 
@@ -215,6 +230,8 @@ Note that you can put your configuration files anywhere inside your application 
 ```yaml
 recipe: wordpress
 config:
+  php: '8.3'
+  database: mysql:8.0
   config:
     database: config/my-custom.cnf
     php: config/php.ini

@@ -1,0 +1,9 @@
+name: wordpress-recommended
+recipe: wordpress
+config:
+  php: '8.3'
+  database: mysql:8.0
+
+# do not remove this
+plugins:
+  "@lando/wordpress": ../..

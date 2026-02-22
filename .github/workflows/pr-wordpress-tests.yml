@@ -23,6 +23,7 @@ jobs:
           - examples/wordpress-mariadb-mysql
           - examples/wordpress-mysql8
           - examples/wordpress-nginx
+          - examples/wordpress-recommended
         lando-version:
           - 3-edge
           - 3-stable

@@ -1,5 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated `lando init` to set recommended PHP 8.3 and MySQL 8.0 versions in generated Landofile
+* Added `wordpress-recommended` example with explicit version configuration
+* Updated docs to recommend always setting explicit `php` and `database` versions
+* Updated `@lando/php` to `^1.11.1`
+
 ## v1.10.0 - [February 20, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.0)
 
 * Updated `@lando/php` to `^1.11.0` for MySQL client auto-detection fix

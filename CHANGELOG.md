@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/nginx@1.6.0](https://github.com/lando/nginx/releases/tag/v1.6.0)
+
 ## v1.10.1 - [February 22, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.1)
 
 * Updated `lando init` to set recommended PHP 8.3 and MySQL

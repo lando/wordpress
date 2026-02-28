@@ -1,6 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
 * Updated to [@lando/nginx@1.6.0](https://github.com/lando/nginx/releases/tag/v1.6.0)
+* Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output
 
 ## v1.10.1 - [February 22, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.1)
 

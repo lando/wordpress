@@ -56,6 +56,9 @@ lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 
 
 # Should use composer 2 by default
 lando exec appserver -- /bin/sh -c 'NO_COLOR=1 composer -V' | grep "Composer version 2."
+
+# Should not include ANSI escape codes when output is redirected
+lando composer --version > /tmp/composer-output.txt 2>&1 && ! grep -P '\x1b\[' /tmp/composer-output.txt
 ```
 
 ## Destroy tests

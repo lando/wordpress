@@ -2,6 +2,7 @@
 
 * Updated to [@lando/nginx@1.6.0](https://github.com/lando/nginx/releases/tag/v1.6.0)
 * Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output
+* Fixed MySQL 8.4 startup failure by removing hardcoded `mysql_native_password` authentication [lando/mysql#69](https://github.com/lando/mysql/issues/69)
 
 ## v1.10.1 - [February 22, 2026](https://github.com/lando/wordpress/releases/tag/v1.10.1)
 

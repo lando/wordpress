@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) for mod_headers/mod_expires and xdebug log fix
+
 * Updated to [@lando/nginx@1.6.0](https://github.com/lando/nginx/releases/tag/v1.6.0)
 * Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output
 * Fixed MySQL 8.4 startup failure by removing hardcoded `mysql_native_password` authentication [lando/mysql#69](https://github.com/lando/mysql/issues/69)

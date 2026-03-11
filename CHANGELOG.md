@@ -1,9 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
 * Fixed MySQL 8.4 startup failure by removing hardcoded `mysql_native_password` authentication [lando/mysql#69](https://github.com/lando/mysql/issues/69)
-* Fixed race condition in release promote job [#130](https://github.com/lando/wordpress/pull/130)
 * Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output
-* Updated PHP 8.5 support documentation [#131](https://github.com/lando/wordpress/pull/131)
 * Updated to [@lando/nginx@1.6.0](https://github.com/lando/nginx/releases/tag/v1.6.0)
 * Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) to enable mod_headers/mod_expires by default and fix xdebug log ownership
 

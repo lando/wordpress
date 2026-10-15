@@ -22,6 +22,7 @@ jobs:
           - examples/wordpress-mariadb
           - examples/wordpress-mariadb-mysql
           - examples/wordpress-mysql8
+          - examples/wordpress-mysql84
           - examples/wordpress-nginx
           - examples/wordpress-recommended
         lando-version:

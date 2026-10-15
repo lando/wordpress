@@ -48,7 +48,7 @@ read_buffer_size = 2M
 #       other settings you may need to change.
 #server-id    = 1
 #log_bin      = /src/.lando/log/mysql-bin.log
-expire_logs_days = 10
+binlog_expire_logs_seconds = 864000
 max_binlog_size = 101M
 #binlog_do_db   = include_database_name
 #binlog_ignore_db = include_database_name

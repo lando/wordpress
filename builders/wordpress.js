@@ -207,7 +207,7 @@ const getConfigDefaults = options => {
   const database = _.first(dbConfig.split(':'));
   const version = _.last(dbConfig.split(':')).substring(0, 2);
   if (database === 'wordpress-mysql' || database === 'mysql' || database === 'mariadb') {
-    if (version === '8.') {
+    if (_.startsWith(version, '8')) {
       options.defaultFiles.database = 'mysql8.cnf';
     } else {
       options.defaultFiles.database = 'mysql.cnf';

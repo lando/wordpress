@@ -22,6 +22,7 @@ jobs:
           - examples/wordpress-mariadb
           - examples/wordpress-mariadb-mysql
           - examples/wordpress-mysql8
+          - examples/wordpress-mysql84
           - examples/wordpress-nginx
           - examples/wordpress-recommended
         lando-version:
@@ -64,3 +65,4 @@ jobs:
           cleanup-header: "Destroy tests"
           shell: bash
           stdin: true
+          version: 1.0.0-beta.4

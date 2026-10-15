@@ -1,5 +1,8 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Fixed MySQL 8.2+ startup failure by replacing removed `expire_logs_days` with `binlog_expire_logs_seconds` [#107](https://github.com/lando/wordpress/issues/107)
+* Fixed `mysql:8` startup failure by using the MySQL 8 config instead of the 5.7 config
+
 ## v1.11.0 - [March 11, 2026](https://github.com/lando/wordpress/releases/tag/v1.11.0)
 
 * Fixed MySQL 8.4 startup failure by removing hardcoded `mysql_native_password` authentication [lando/mysql#69](https://github.com/lando/mysql/issues/69)
